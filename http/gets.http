@@ -1,0 +1,9 @@
+### GET request to root
+GET http://localhost:8080
+
+###
+
+### GET request to /hello
+GET http://localhost:8080/hello
+
+###

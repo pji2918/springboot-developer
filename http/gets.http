@@ -1,9 +1,26 @@
-### GET request to root
+### GET request to /
 GET http://localhost:8080
 
 ###
 
 ### GET request to /hello
 GET http://localhost:8080/hello
+
+###
+
+### GET request to /test
+GET http://localhost:8080/test
+
+###
+### POST request to /test
+POST http://localhost:8080/test
+
+###
+### DELETE request to /test
+DELETE http://localhost:8080/test
+
+###
+### PUT request to /test
+PUT http://localhost:8080/test
 
 ###

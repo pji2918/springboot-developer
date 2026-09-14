@@ -1,11 +1,11 @@
 package com.pji2918.springdeveloper;
 
 
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloWorldController {
-
     // "/hello" 요청을 보내면 hello() 메서드 호출
     // http://localhost:8080/hello
     @GetMapping("/hello")
@@ -13,24 +13,24 @@ public class HelloWorldController {
         return "Hello World";
     }
 
-    // http://localhost:8080/test -> Hello, everyone!!!!!
-    @GetMapping("/test")
-    public String test() {
-        return "Hello, everyone!!!!!";
-    }
-
-    @PostMapping("/test")
-    public String postTest() {
-        return "Post Test response!!!!!";
-    }
-
-    @DeleteMapping("/test")
-    public String deleteTest() {
-        return "Delete Test response!!!!!";
-    }
-
-    @PutMapping("/test")
-    public String putTest() {
-        return "Put Test response!!!!!";
-    }
+//    // http://localhost:8080/test -> Hello, everyone!!!!!
+//    @GetMapping("/test")
+//    public String test() {
+//        return "Hello, everyone!!!!!";
+//    }
+//
+//    @PostMapping("/test")
+//    public String postTest() {
+//        return "Post Test response!!!!!";
+//    }
+//
+//    @DeleteMapping("/test")
+//    public String deleteTest() {
+//        return "Delete Test response!!!!!";
+//    }
+//
+//    @PutMapping("/test")
+//    public String putTest() {
+//        return "Put Test response!!!!!";
+//    }
 }

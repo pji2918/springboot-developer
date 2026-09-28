@@ -1,11 +1,12 @@
-POST http://localhost:8080/api/members
+###
+POST http://localhost:8080/member
 Content-Type: application/json
 
 {
-  "name": "test-001",
-  "email": "test@example.org"
+  "name": "pizza"
 }
 
 ###
+GET http://localhost:8080/member
 
-GET http://localhost:8080/api/members
+###

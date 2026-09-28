@@ -7,8 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
-@NoArgsConstructor(access = AccessLevel.PROTECTED) // -> protected Member() {}
-@AllArgsConstructor // -> public Member(Long id, String name) { this.id = id; this.name = name; }
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
 @Getter
 public class Member {
     @Id
@@ -18,8 +18,4 @@ public class Member {
 
     @Column(name = "name", nullable = false)
     private String name;
-
-    public Member(String name) {
-        this.name = name;
-    }
 }

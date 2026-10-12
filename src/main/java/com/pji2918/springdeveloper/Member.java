@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+@SuppressWarnings("JpaDataSourceORMInspection")
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
@@ -18,4 +19,8 @@ public class Member {
 
     @Column(name = "name", nullable = false)
     private String name;
+
+    public Member(String name) {
+        this.name = name;
+    }
 }

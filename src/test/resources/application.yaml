@@ -1,0 +1,4 @@
+spring:
+  sql:
+    init:
+      mode: never # src/main/resources/data.sql 실행 차단

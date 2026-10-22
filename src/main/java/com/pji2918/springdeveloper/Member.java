@@ -1,10 +1,7 @@
 package com.pji2918.springdeveloper;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @SuppressWarnings("JpaDataSourceORMInspection")
 @Entity
@@ -17,6 +14,7 @@ public class Member {
     @Column(name = "id", updatable = false)
     private Long id;
 
+    @Setter
     @Column(name = "name", nullable = false)
     private String name;
 

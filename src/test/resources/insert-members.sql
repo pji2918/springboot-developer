@@ -1,6 +1,0 @@
-INSERT INTO member
-VALUES (1, 'A');
-INSERT INTO member
-VALUES (2, 'B');
-INSERT INTO member
-VALUES (3, 'C');

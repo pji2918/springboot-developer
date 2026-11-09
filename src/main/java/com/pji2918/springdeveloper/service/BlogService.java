@@ -20,4 +20,12 @@ public class BlogService {
     public List<Article> findAll() {
         return blogRepository.findAll();
     }
+
+    public Article findById(Long id) {
+        return blogRepository.findById(id).orElse(null);
+    }
+
+    public void deleteById(Long id) {
+        blogRepository.deleteById(id);
+    }
 }

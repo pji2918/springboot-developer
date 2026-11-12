@@ -1,10 +1,7 @@
 package com.pji2918.springdeveloper.dao;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Getter
@@ -16,9 +13,11 @@ public class Article {
     private Long id;
 
     @Column(nullable = false)
+    @Setter
     private String title;
 
     @Column(nullable = false)
+    @Setter
     private String content;
 
     @Builder

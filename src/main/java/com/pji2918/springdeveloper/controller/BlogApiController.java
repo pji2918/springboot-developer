@@ -3,6 +3,7 @@ package com.pji2918.springdeveloper.controller;
 import com.pji2918.springdeveloper.dao.Article;
 import com.pji2918.springdeveloper.dto.ArticleCreationRequest;
 import com.pji2918.springdeveloper.dto.ArticleResponse;
+import com.pji2918.springdeveloper.dto.ArticleUpdateRequest;
 import com.pji2918.springdeveloper.service.BlogService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -54,5 +55,13 @@ public class BlogApiController {
         } catch (IllegalArgumentException e) {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @PutMapping("/api/articles/{id}")
+    public ResponseEntity<ArticleResponse> updateArticle(
+            @PathVariable Long id,
+            @RequestBody ArticleUpdateRequest request) {
+        Article updatedArticle = blogService.updateArticle(id, request);
+        return ResponseEntity.ok(new ArticleResponse(updatedArticle));
     }
 }

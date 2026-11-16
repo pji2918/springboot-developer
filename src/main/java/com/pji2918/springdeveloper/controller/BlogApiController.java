@@ -34,7 +34,7 @@ public class BlogApiController {
 //            articleResponseList.add(new ArticleResponse(article));
 //        }
 //        return ResponseEntity.ok(articleResponseList);
-        return ResponseEntity.ok(blogService.findAll().parallelStream().map(ArticleResponse::new).toList());
+        return ResponseEntity.ok(blogService.findAll().stream().map(ArticleResponse::new).toList());
     }
 
     @GetMapping("/api/articles/{id}")

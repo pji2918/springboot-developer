@@ -1,5 +1,6 @@
 spring:
   datasource:
+    # noinspection SpellCheckingInspection
     url: jdbc:h2:mem:testdb
   h2:
     console:

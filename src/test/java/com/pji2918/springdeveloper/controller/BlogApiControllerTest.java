@@ -57,7 +57,7 @@ class BlogApiControllerTest {
                 .andExpect(jsonPath("$.title").value(TITLE))
                 .andExpect(jsonPath("$.content").value(CONTENT));
 
-        // Then2
+        // Then 2
         // DB의 값이 일치하는가?
         List<Article> articles = blogRepository.findAll();
         assertThat(articles.size()).isEqualTo(1);
@@ -107,12 +107,15 @@ class BlogApiControllerTest {
         // When
         // 삭제에 성공하는가?
         mockMvc.perform(delete("/api/articles/{id}", article.getId()))
+                // Then
                 .andExpect(status().isNoContent());
         // 삭제된 글 조회 시 404인가?
         mockMvc.perform(get("/api/articles/{id}", article.getId()))
+                // Then
                 .andExpect(status().isNotFound());
         // 다른 글이 삭제되지는 않았는가?
         mockMvc.perform(get("/api/articles/{id}", article2.getId()))
+                // Then
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.title").value(TITLE))
                 .andExpect(jsonPath("$.content").value(CONTENT));
@@ -139,6 +142,7 @@ class BlogApiControllerTest {
         // When 2
         // 다른 글이 수정되지는 않았는가?
         mockMvc.perform(get("/api/articles/{id}", article2.getId()))
+                // Then 2
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.title").value(TITLE))
                 .andExpect(jsonPath("$.content").value(CONTENT));

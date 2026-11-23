@@ -10,17 +10,31 @@
 <body>
 <h1>타임리프 익히기</h1>
 <p></p>
-<div>
-    <p th:text="${person.name}">이름</p>
-    <p th:text="${person.age}">나이</p>
+<div th:object="${person}">
+    <!--    <p th:text="${#temporals.format(#temporals.createToday(), 'yyyy년 MM월 dd일')}"></p>-->
+    <p th:text="${#temporals.format(today, 'yyyy년 M월 d일 h시 mm분')}"></p>
+    <!--<p th:text="${person.name}">이름</p>-->
+    <p th:text="*{name}">이름</p>
+    <!--<p th:text="${person.age}">나이</p>-->
+    <p th:text="*{age}">나이</p>
     <p>취미</p>
 
     <ul>
-        <li>운동</li>
-        <span>(대표 취미)</span>
+        <!--           
+        // for React:
+        {person.hobbies.map((hobby, index) =>
+        <li key="hobby">
+            <span>{hobby}</span>
+            {index === 0 ? <span>(대표 취미)</span> : null}
+        </li>)}
+        -->
+        <li th:each="hobby:*{hobbies}">
+            <span th:text="${hobby}">취미</span>
+            <span th:if="${person.hobbies.indexOf(hobby) == 0}">(대표 취미)</span>
+        </li>
     </ul>
 
-    <a href="">글보기</a>
+    <a th:href="@{/api/articles/{id}(id = ${person.blogId})}">글보기</a>
 </div>
 </body>
 </html>

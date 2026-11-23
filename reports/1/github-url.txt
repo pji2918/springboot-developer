@@ -1,1 +1,1 @@
-https://github.com/pji2918/springboot-developer/blob/chapter6/src/test/java/com/pji2918/springdeveloper/QuizControllerTest.java
+https://github.com/pji2918/springboot-developer/blob/chapter6/src/test/java/com/pji2918/springdeveloper/controller/BlogApiControllerTest.java

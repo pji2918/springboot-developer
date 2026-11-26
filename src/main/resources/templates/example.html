@@ -6,6 +6,8 @@
           name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>Document</title>
+    <!-- ignore favicon 404 error -->
+    <link href="data:," rel="icon"/>
 </head>
 <body>
 <h1>타임리프 익히기</h1>
@@ -31,10 +33,14 @@
         <li th:each="hobby:*{hobbies}">
             <span th:text="${hobby}">취미</span>
             <span th:if="${person.hobbies.indexOf(hobby) == 0}">(대표 취미)</span>
+            <!--            <span th:unless="${person.hobbies.indexOf(hobby) == 0}">(보조 취미)</span>-->
+            <span th:if="${person.hobbies.indexOf(hobby) != 0}">(일반 취미)</span>
         </li>
     </ul>
 
-    <a th:href="@{/api/articles/{id}(id = ${person.blogId})}">글보기</a>
+    <a th:href="@{/api/articles/{id}(id = *{blogId})}">
+        <span th:text="*{blogId}"></span>번 글보기
+    </a>
 </div>
 </body>
 </html>
